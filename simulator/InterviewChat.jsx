@@ -44,7 +44,11 @@ const InterviewChat = ({
   };
 
   const onNextClick = () => {
-    handleNext();      // ✅ USED
+    if(!answer.trim()) {
+      alert("Please provide an answer before continuing.");
+      return;
+    }
+    handleNext(answer);      // PASS ANSWER BACK UP
     setAnswer("");     // reset input
   };
 
